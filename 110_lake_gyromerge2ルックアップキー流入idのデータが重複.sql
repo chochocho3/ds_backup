@@ -8,8 +8,9 @@ select
 	,a_ev_type.name as 案件種別
 	,a_ev.created_at as 案件作成日時
 	,a_ev.updated_at as 案件更新日時
-	,co_emp.last_name || co_emp.first_name as 案件作成者
-	,cm_emp.last_name || cm_emp.first_name as 案件対応者
+	,sup_emp.last_name || sup_emp.first_name as 案件作成者
+	,cor_emp.last_name || cor_emp.first_name as 案件対応者
+	,org.name as 案件対応者組織
 	,a_ev_status.name as 案件ステータス
 	,a_ev.event_completed_time as 案件完了日時
 from
@@ -19,6 +20,7 @@ from
 	left join assessment.events a_ev on a_ev.assessment_offer_id = c_ao.id
 	inner join assessment.master_event_types a_ev_type on a_ev_type.id = a_ev.master_event_type_id
 	inner join assessment.master_event_statuses a_ev_status on a_ev_status.id = a_ev.master_event_status_id
-	inner join common.employees cm_emp on cm_emp.employee_number = a_ev.corresponding_employee_number
-	inner join common.employees co_emp on co_emp.employee_number = a_ev.supported_employee_number
-	where c_inf.id = 951507
+	inner join common.employees sup_emp on sup_emp.employee_number = a_ev.supported_employee_number
+	inner join common.employees cor_emp on cor_emp.employee_number = a_ev.corresponding_employee_number
+	inner join common.master_organizations org on org.code = a_ev.organization_code
+	where c_inf.id = 927023
