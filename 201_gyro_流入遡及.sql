@@ -1,7 +1,7 @@
 --遡及--
 --01_流入店舗用（流入作成）
 INSERT INTO inflows (customer_link_id, registered_time, master_inflow_type_id, master_campaign_id, is_handling_unrequired, created_at, updated_at) VALUES
-=" ("&D2&", '"&TEXT(C2,"yyyy-MM-dd")&"', 9, 981, true, current_timestamp at time zone 'Japan', current_timestamp at time zone 'Japan')," --excel用
+=" ("&D2&", '"&TEXT(C2,"yyyy-MM-dd")&"', 9, 1152, true, current_timestamp at time zone 'Japan', current_timestamp at time zone 'Japan')," --excel用
 --02_流入cid（マーケ遡及）
 update inflows set master_campaign_id = xx where id = xx;
 ="update inflows set master_campaign_id = "&B2&" where id = "&A2&";" --excel用
