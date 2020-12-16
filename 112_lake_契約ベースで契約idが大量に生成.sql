@@ -45,7 +45,9 @@ and sc.is_settlement_confirmed = true --契約決済確認済：true
 
 
 /* 以下、遡及文 */
+--案件
 update events set master_event_status_id = 5, lock_version = lock_version + 1, updated_at = current_timestamp at time zone 'Japan', event_completed_time = '' where id = '';
+--コミュニケーション
 update communications set master_appointment_conclusion_status_id = 2, optimistic_lock_version = optimistic_lock_version + 1, updated_at = current_timestamp at time zone 'Japan' where id = 701117;
 
 /* 以下、確認文
