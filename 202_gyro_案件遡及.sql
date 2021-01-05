@@ -35,5 +35,5 @@ select id, customer_link_id, lock_version, updated_at from events where id = '';
 select id, inflow_id = , lock_version, updated_at from events where id = '';
 
 --10_案件店舗遡及：顧客リンクid(03), 流入id(04)
-select id, customer_link_id, inflow_id, lock_version, updated_at from events where id = '';
-="select id, customer_link_id, inflow_id, lock_version, updated_at from events where id = '"&A2&"';" --excel用
+select id, customer_link_id, inflow_id, lock_version, updated_at from events where id in ('');
+="select id, customer_link_id, inflow_id, lock_version, updated_at from events where id in ('"&A18&"');" --excel用
