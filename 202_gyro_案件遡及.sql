@@ -26,7 +26,7 @@ select id, master_event_status_id, lock_version, updated_at from events where id
 
 --02_案件完了日時
 select id, event_completed_time, lock_version, updated_at from events where id = '';
-="select ev.id, ev_st.name, event_completed_time, lock_version, ev.updated_at from events ev join master_event_statuses ev_st on ev_st.id = ev.master_event_status_id where ev.id in ('"&A10&"');" --excel用
+="select ev.id, ev_st.name, event_completed_time, lock_version, ev.updated_at from events ev join master_event_statuses ev_st on ev_st.id = ev.master_event_status_id where ev.id in ('"&A1&"');" --excel用
 
 --03_案件顧客リンクid
 select id, customer_link_id, lock_version, updated_at from events where id = '';
@@ -36,4 +36,4 @@ select id, inflow_id = , lock_version, updated_at from events where id = '';
 
 --10_案件店舗遡及：顧客リンクid(03), 流入id(04)
 select id, customer_link_id, inflow_id, lock_version, updated_at from events where id in ('');
-="select id, customer_link_id, inflow_id, lock_version, updated_at from events where id in ('"&A18&"');" --excel用
+="select id, customer_link_id, inflow_id, lock_version, updated_at from events where id in ('"&A1&"');" --excel用

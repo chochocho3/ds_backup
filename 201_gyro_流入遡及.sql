@@ -18,7 +18,7 @@ update inflows set registered_time = '' where id = xx;
 
 --確認--
 --01_流入店舗用（流入作成）
-="select id, customer_link_id, registered_time, master_inflow_type_id, master_campaign_id, is_handling_unrequired, created_at, updated_at from inflows where customer_link_id in ("&A14&");" --excel用
+="select id, customer_link_id, registered_time, master_inflow_type_id, master_campaign_id, is_handling_unrequired, created_at, updated_at from inflows where customer_link_id in ("&D1&");" --excel用
 --02_流入cid（マーケ遡及）
 select id, master_campaign_id from inflows where id in ();
 ="select id, master_campaign_id from inflows where id in ("&E1&");"
